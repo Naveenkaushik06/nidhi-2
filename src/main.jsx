@@ -5,8 +5,6 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import appRouter from './App.jsx'
 
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={appRouter} />
-)
+  <RouterProvider router={appRouter}  />
+);

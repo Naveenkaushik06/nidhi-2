@@ -73,7 +73,7 @@ const AdminLogin = () => {
             <span className="hover:underline font-medium text-lg"> Create account</span>
           </Link>
         </p>
-        <Link to="/dashboard">
+        <Link to="/login/dashboard">
           <button
             type="submit"
             className="p-2 w-48 bg-blue-600 hover:bg-blue-700 hover:shadow-lg rounded-3xl font-light text-2xl m-auto tracking-widest"

@@ -1,22 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import LoginBtn from "./components/portallogin/LoginBtn";
 import AdminLogin from "./components/portallogin/AdminLogin";
 import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Signup from "./components/userlogin/Signup";
-import Dashboard from "./components/dashboard/Dashboard";
-// import Header from "./components/dashboard/Header"
+import PrivateRoutes from "./components/privateroute/PrivateRoutes";
+
 
 function AppLayout() {
-  
   return (
-    <div className="">
-      {/* <Header /> */}
+    <div>
       <Outlet />
     </div>
   );
-}
+};
 
 const appRouter = createBrowserRouter([
   {
@@ -28,12 +26,16 @@ const appRouter = createBrowserRouter([
         element: <LoginBtn />,
       },
       {
-        path: "/admin/login",
+        path: "/login",
         element: <AdminLogin />,
       },
       {
         path: "/admin/forgetpassword",
         element: <Login />,
+      },
+      {
+        path: "/login/*",
+        element: <PrivateRoutes />,
       },
       {
         path: "/admin/otpvarification",
@@ -42,10 +44,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/admin/register",
         element: <Signup />,
-      },
-      {
-        path: "/dashboard",
-        element: <Dashboard />,
       },
     ],
   },

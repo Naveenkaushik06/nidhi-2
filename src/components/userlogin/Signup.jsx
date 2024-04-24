@@ -117,7 +117,7 @@ const Signup = () => {
         {/* Login button */}
         <p className="text-start text-pretty w-fit">
           if you have already account ?{" "}
-          <Link to="/admin/login">
+          <Link to="/login">
             <span className="font-semibold text-xl">login account</span>
           </Link>
         </p>

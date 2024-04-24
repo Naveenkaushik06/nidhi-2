@@ -7,7 +7,7 @@ const LoginBtn = () => {
        Portal
       </h1>
       <div className="text-center flex flex-col gap-4">
-        <Link to="/admin/login">
+        <Link to="/login">
           <button className="p-2 border rounded-2xl w-40 h-12 bg-green-300 font-mono text-white text-lg tracking-widest">
             ADMIN
           </button>
