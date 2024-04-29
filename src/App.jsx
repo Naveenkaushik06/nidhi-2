@@ -1,16 +1,20 @@
 import React from "react";
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import LoginBtn from "./components/portallogin/LoginBtn";
-import AdminLogin from "./components/portallogin/AdminLogin";
+// import AdminLogin from "./components/portallogin/AdminLogin";
 import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Signup from "./components/userlogin/Signup";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
+import Loans from "./components/loans/Loans";
+
+
 
 
 function AppLayout() {
   return (
     <div>
+      
       <Outlet />
     </div>
   );
@@ -23,27 +27,29 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LoginBtn />,
+        element: <LoginBtn/>,
       },
+    
       {
-        path: "/login",
-        element: <AdminLogin />,
-      },
-      {
-        path: "/admin/forgetpassword",
+        path: "/forgetpassword",
         element: <Login />,
       },
       {
-        path: "/login/*",
+        path: "*",
         element: <PrivateRoutes />,
       },
+     
       {
-        path: "/admin/otpvarification",
+        path: "/otpvarification",
         element: <Register />,
       },
       {
-        path: "/admin/register",
+        path: "/register",
         element: <Signup />,
+      },
+      {
+        path: "/loans",
+        element: <Loans/>,
       },
     ],
   },
