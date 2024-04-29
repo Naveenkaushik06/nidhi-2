@@ -121,7 +121,7 @@ const Signup = () => {
             <span className="font-semibold text-xl">login account</span>
           </Link>
         </p>
-        <Link to="/admin/login">
+        <Link to="/login">
           <button
             type="submit"
             className="border p-2 w-36 bg-blue-900 

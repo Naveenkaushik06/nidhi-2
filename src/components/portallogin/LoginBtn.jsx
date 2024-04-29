@@ -12,7 +12,7 @@ const LoginBtn = () => {
             ADMIN
           </button>
         </Link>
-        <Link to="register">
+        <Link to="/register">
           <button className="p-2 border rounded-2xl w-40 h-12 bg-green-300 00 font-mono text-white text-lg tracking-widest">
             AGENT
           </button>
