@@ -47,7 +47,7 @@ const Register = () => {
           />
         ))}
       </div>
-      <Link to="/admin/login">
+      <Link to="/login">
         <button
           type="submit"
           className="border p-2 w-36 bg-blue-900 rounded-3xl font-thin text-2xl m-auto tracking-widest"

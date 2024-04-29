@@ -22,7 +22,7 @@ const Login = () => {
           className="w-full text-black px-4 py-2 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
         />
       </div>
-      <Link to="/admin/otpvarification">
+      <Link to="/otpvarification">
         <button
           type="submit"
           className="border p-2 w-36 bg-blue-900 
