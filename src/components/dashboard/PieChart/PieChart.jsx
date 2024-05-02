@@ -12,7 +12,7 @@ const ChartOne = () => {
 
   useEffect(() => {
     const width = 928;
-    const height = Math.min(width, 500);
+    const height = Math.min(width, 550);
     const color = d3.scaleOrdinal()
       .domain(data.map(d => d.name))
       .range(d3.quantize(t => d3.interpolateSpectral(t * 0.8 + 0.1), data.length).reverse());
@@ -35,7 +35,7 @@ const ChartOne = () => {
       .attr("width", width)
       .attr("height", height)
       .attr("viewBox", [-width / 2, -height / 2, width, height])
-      .attr("style", "max-width: 100%; height: auto; font: 1.5rem sans-sarif;");
+      .attr("style", "max-width: 100%; height: auto; font: 2rem sans-sarif;");
 
     svg.append("g")
       .attr("stroke", "white")
@@ -69,9 +69,11 @@ const ChartOne = () => {
   }, []); // No dependency array as data is defined within the component
 
   return (
-    <div className="mx-auto sm:w-11/12 md:w-10/12 lg:w-3/4 2xl">
-      <h2 className="text-xl font-semibold mb-4">Expense Statistics</h2>
-      <svg ref={chartContainer} />
+    <div className="mx-auto sm:w-11/12 md:w-10/12 lg:w-3/4">
+      <h2 className="text-xl font-semibold mb-4 w-96 text-start mx-auto">Expense Statistics</h2>
+      <div className="bg-white rounded-lg shadow-md w-96 mx-auto p-3">
+      <svg ref={chartContainer} height={300} width={200} />
+      </div>
     </div>
   );
 };

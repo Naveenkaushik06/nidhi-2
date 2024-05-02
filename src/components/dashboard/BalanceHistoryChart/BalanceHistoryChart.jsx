@@ -13,13 +13,15 @@ const BalanceHistoryChart = () => {
     { month: 'Jul', balance: 1200 },
     { month: 'Aug', balance: 1400 },
     { month: 'Sep', balance: 6600 },
-    { month: 'Oct', balance: 800 }
+    { month: 'Oct', balance: 800 },
+    { month: 'Nov', balance: 800 },
+    { month: 'Dec', balance: 800 }
   ];
 
   useEffect(() => {
     const margin = { top: 20, right: 30, bottom: 30, left: 40 };
-    const width = 500 - margin.left - margin.right;
-    const height = 500 - margin.top - margin.bottom;
+    const width = 350 - margin.left - margin.right;
+    const height = 200 - margin.top - margin.bottom;
 
     const svg = d3.select(chartContainer.current)
       .attr("width", width + margin.left + margin.right)
@@ -77,9 +79,9 @@ const BalanceHistoryChart = () => {
   }, []);
 
   return (
-    <div className="mx-auto sm:w-11/12 md:w-10/12 lg:w-3/4 max-xl:">
-      <h2 className="text-xl font-semibold mb-4">Balance History</h2>
-      <div className="bg-white rounded-lg shadow-md">
+    <div className="mx-auto sm:w-11/12 md:w-10/12 lg:w-3/4">
+      <h2 className="text-xl font-semibold mb-4 w-96 text-start mx-auto">Balance History</h2>
+      <div className="bg-white rounded-lg shadow-md w-96 mx-auto p-3">
         <svg ref={chartContainer} className='w-full'></svg>
       </div>
     </div>

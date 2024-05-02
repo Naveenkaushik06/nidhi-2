@@ -10,8 +10,8 @@ const WeeklyActivityChart = () => {
     const creditData = [40, 70, 55, 85]; // Sample credit data for 5 weeks
 
     const margin = { top: 20, right: 30, bottom: 30, left: 40 };
-    const width = 600 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
+    const width = 300 - margin.left - margin.right;
+    const height = 200 - margin.top - margin.bottom;
 
     const svg = d3.select(chartContainer.current)
       .attr("width", width + margin.left + margin.right)
@@ -47,11 +47,11 @@ const WeeklyActivityChart = () => {
       .selectAll("g")
       .data([debitData, creditData])
       .join("g")
-      .attr("transform", (d, i) => `translate(${x1.bandwidth() * i},0)`)
+      .attr("transform", (d, i) => `translate(${x1.bandwidth()* i},0)`)
       .selectAll("rect")
       .data(d => d)
       .join("rect")
-      .attr("x", (d, i, j) => x0(`Week ${i + 1}`) + x1.bandwidth() / 1) // Adjust x position for padding
+      .attr("x", (d, i, j) => x0(`Week ${i + 1}`) + x1.bandwidth() / 2) // Adjust x position for padding
       .attr("y", d => y(d))
       .attr("width", x1.bandwidth() * 0.5) // Adjusted width to create gap between bars
       .attr("height", d => height - y(d))
@@ -86,10 +86,10 @@ const WeeklyActivityChart = () => {
   }, []);
 
   return (
-    <div className="mx-auto sm:w-11/12 md:w-10/12 lg:w-3/4 2xl">
-      <h2 className="text-xl font-semibold mb-4">Weekly Debit and Credit Activity</h2>
-      <div className="bg-white rounded-lg shadow-md">
-        <svg ref={chartContainer} className=' w-full '></svg>
+    <div className="sm:w-11/12 md:w-10/12 lg:w-3/4">
+      <h2 className="text-xl font-semibold mb-4 w-96 text-start mx-auto">Weekly Activity</h2>
+      <div className="bg-white rounded-lg shadow-md w-96 mx-auto p-3">
+        <svg ref={chartContainer} className='w-full'></svg>
       </div>
     </div>
   );
