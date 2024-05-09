@@ -7,12 +7,13 @@ import Register from "./components/userlogin/Register";
 import Signup from "./components/userlogin/Signup";
 import Loans from "./components/loans/Loans";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
-
+import Dashboard from "./components/dashboard/Dashboard";
+import Dashboard2 from "./components/dashboard/Dashboard2"
+import Mainsetting from "./components/settingss/Mainsetting";
 
 function AppLayout() {
   return (
     <div>
-      
       <Outlet />
     </div>
   );
@@ -25,13 +26,34 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-
+        element: <LoginBtn />,
       },
-    
       {
-
+        path: "/login",
+        element: <PrivateRoutes />,
       },
-     
+      {
+        path: "/*",
+        element: <PrivateRoutes />,
+        children: [
+          {
+            path: "dashboard",
+            element: <Dashboard />,
+          },
+          {
+            path: "transactions",
+            element: <Dashboard2 />
+          },
+          {
+            path: "settings/editprofile",
+            element: <Mainsetting />
+          }
+        ],
+      },
+      {
+        path: "/forgetpassword",
+        element: <Login />,
+      },
       {
         path: "/otpvarification",
         element: <Register />,
@@ -39,10 +61,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/register",
         element: <Signup />,
-      },
-      {
-        path: "/loans",
-        element: <Loans/>,
       },
     ],
   },
