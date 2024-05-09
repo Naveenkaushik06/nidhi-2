@@ -5,10 +5,8 @@ import LoginBtn from "./components/portallogin/LoginBtn";
 import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Signup from "./components/userlogin/Signup";
-import PrivateRoutes from "./components/privateroute/PrivateRoutes";
 import Loans from "./components/loans/Loans";
-
-
+import PrivateRoutes from "./components/privateroute/PrivateRoutes";
 
 
 function AppLayout() {
@@ -18,7 +16,7 @@ function AppLayout() {
       <Outlet />
     </div>
   );
-};
+}
 
 const appRouter = createBrowserRouter([
   {
@@ -27,16 +25,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LoginBtn/>,
+
       },
     
       {
-        path: "/forgetpassword",
-        element: <Login />,
-      },
-      {
-        path: "*",
-        element: <PrivateRoutes />,
+
       },
      
       {

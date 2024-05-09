@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <form
-      className=" h-2/4 w-2/4 border  via-blue-900 text-white m-auto flex flex-col gap-12 rounded-xl px-5 py-6 place-items-center bg-gradient-to-l from-blue-300 to-indigo-900
+      className=" h-screen w-screen  via-blue-900 text-white m-auto flex flex-col gap-12 rounded-xl px-5 py-6 place-items-center bg-gradient-to-l from-blue-300 to-indigo-900
         "
     >
       <h1 className="text-center text-3xl mt-5 p-3 font-mono tracking-wider">
@@ -22,7 +22,7 @@ const Login = () => {
           className="w-full text-black px-4 py-2 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
         />
       </div>
-      <Link to="/admin/otpvarification">
+      <Link to="/otpvarification">
         <button
           type="submit"
           className="border p-2 w-36 bg-blue-900 

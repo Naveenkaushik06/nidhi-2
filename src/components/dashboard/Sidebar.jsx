@@ -231,7 +231,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/settings"
+                to="/settings/editprofile"
                 className="flex items-center  px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
